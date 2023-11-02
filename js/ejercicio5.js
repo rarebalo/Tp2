@@ -17,12 +17,53 @@ Input:  40773821
 Output: ‘L’
 */
 
-const numeroDni = 0;
-const letras = [T, R, W, A, G, M, Y, F, P, D, X, B, N, J, Z, S, Q, V, H, L, C, K, E];
-
+let numeroDni = 0;
+let letras = [
+  "T",
+  "R",
+  "W",
+  "A",
+  "G",
+  "M",
+  "Y",
+  "F",
+  "P",
+  "D",
+  "X",
+  "B",
+  "N",
+  "J",
+  "Z",
+  "S",
+  "Q",
+  "V",
+  "H",
+  "L",
+  "C",
+  "K",
+  "E",
+];
+let primeraDni = true;
 
 do {
-
+  while (primeraDni) {
     numeroDni = prompt("Ingrese su numero de DNI: ");
-    
-} while (condition);
+    primeraDni = false;
+  }
+
+  if (numeroDni) {
+    numeroDni = parseInt(numeroDni);
+  }
+  if (Number.isNaN(numeroDni) || numeroDni > 99999999 || numeroDni < 0) {
+    alert(
+      "Lo que ingreso no fue el DNI o esta por fuera del rango (0-99999999), ingrese el DNI."
+    );
+    primeraDni = true;
+  } else {
+    numeroDni = prompt(
+      `DNI: ${numeroDni} Letra correspondiente: ${
+        letras[numeroDni % 23]
+      }\nIngrese un nuevo DNI: `
+    );
+  }
+} while (numeroDni !== null);
