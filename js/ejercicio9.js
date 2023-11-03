@@ -17,3 +17,24 @@ que indique cuáles son múltiplos de 4 y de 9 y que cada 5 líneas
 10
 */
 
+const extensionNumeros = 500;
+let ingresoLinea = 0;
+
+for (let i = 1; i <= extensionNumeros; i++) {  
+
+  while (ingresoLinea === 5) {
+    document.write("————————————————————-");
+    document.write("<br>");
+    ingresoLinea = 0;
+  }
+  ingresoLinea++;
+  document.write(i);
+  if (i % 4 === 0) {
+    document.write(" (Múltiplo de 4)");
+  }
+  if (i % 9 === 0) {
+    document.write(" (Múltiplo de 9) ");
+  }
+
+  document.write("<br>");
+}
